@@ -5,31 +5,42 @@ const previousBtn = document.getElementById("prev");
 const nextBtn = document.getElementById("next");
 const toggleBtn = document.getElementById("toggle");
 
-const images = [
+const items = [
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum1/600/400",
         caption: "zdjęcie numer 1"
     },
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum2/600/400",
         caption: "zdjęcie numer 2"
     },
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum3/600/400",
         caption: "zdjęcie numer 3"
     },
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum4/600/400",
         caption: "zdjęcie numer 4"
     },
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum5/600/400",
         caption: "zdjęcie numer 5"
     },
     {
+        type: "img",
         url: "http://picsum.photos/seed/picsum6/600/400",
         caption: "zdjęcie numer 6"
     },
+    {
+        type: "youtube",
+        url: "https://www.youtube.com/embed/aXOChLn5ZdQ",
+        caption: "video numer 1"
+    }
 ]
 
 let index = 0;
@@ -37,7 +48,7 @@ let isAutoPlayOn = false;
 let interval;
 
 function init(){
-    images.forEach(image => addImage(image));
+    items.forEach(item => addItem(item));
     buttonsInit();
     markSelectedImageButton();
 }
@@ -55,14 +66,37 @@ function buttonsInit(){
 
     addIndexButtons();
 }
+
+function addItem(item){
+    if(item.type === "img")
+        return addImage(item);
+
+    if(item.type === "youtube")
+        return addVideo(item);
+}
 function addImage(image){
-    var imageDiv = template.cloneNode(true);
+    let imageDiv = template.cloneNode(true);
     imageDiv.style.display = "block";
     imageDiv.childNodes[1].childNodes[1].src = image.url;
     imageDiv.childNodes[1].childNodes[3].innerHTML = image.caption;
     container.appendChild(imageDiv);
 }
 
+function addVideo(video){
+    let videoDiv = template.cloneNode(true);
+    videoDiv.style.display = "block";
+    let iframe = document.createElement("iframe");
+    iframe.height = "400px";
+    iframe.width = "600px";
+    iframe.src = video.url;
+
+    
+    let figureElement = videoDiv.childNodes[1];
+    figureElement.replaceChild(iframe, figureElement.childNodes[1]);
+
+    videoDiv.childNodes[1].childNodes[3].innerHTML = video.caption;
+    container.appendChild(videoDiv);
+}
 
 function onPrevNextButtonClick(indexChange){
     index+=indexChange;
@@ -71,7 +105,7 @@ function onPrevNextButtonClick(indexChange){
 }
 
 function addIndexButtons(){
-    for (let i = 0; i < images.length; i++) {
+    for (let i = 0; i < items.length; i++) {
         let linkButton = document.createElement("button");
         linkButton.classList += 'index-btn';
         
@@ -112,10 +146,10 @@ function onIntervalRun(){
 }
 
 function changeImage(){
-    if(index >= images.length)
+    if(index >= items.length)
         index = 0;
     else if(index < 0)
-        index = images.length-1;
+        index = items.length-1;
 
     container.style.transform = `translateX(${-index*600}px)`
     markSelectedImageButton();
