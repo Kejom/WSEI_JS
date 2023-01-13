@@ -126,7 +126,7 @@ function markSelectedImageButton(){
         if(child.nodeName === "BUTTON")
             child.classList.remove("selected")
     });
-    linksContainer.childNodes[index+1].classList += " selected";
+    linksContainer.children[index].classList += " selected";
 }
 
 init();
