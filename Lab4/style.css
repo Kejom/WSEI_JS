@@ -5,7 +5,7 @@ body {
 }
 
 .container{
-    min-height: 100vh;
+    min-height: 90vh;
     width: 100vw;
     max-width: 100%;
     background-color: rgba(0,0,0,0.8);
@@ -17,7 +17,7 @@ body {
 .card{
 
     width: 10%;
-    max-height:300px;
+    height: 300px;
     margin: 10px;
     padding: 10px 20px;
     background-color: papayawhip;
