@@ -1,4 +1,4 @@
-var StorageManager = function(){
+const StorageManager = function(){
     const storageName = "NoteKeepNotes";
 
     let saveData = function(data){
@@ -11,7 +11,7 @@ var StorageManager = function(){
 
         if(!dataString)
             return [];
-            
+
         var data = JSON.parse(dataString);
         return data;
     }

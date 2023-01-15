@@ -10,13 +10,13 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="card">
+    <div class="container" id="container">
+
+        <!-- <div class="card">
             <h4>placeholder</h4>
             <span class="delete">&times</span>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-        </div>
+        </div> -->
 
     </div>
     <button class="add-button" id="add">Nowa Notatka</button>
@@ -26,12 +26,33 @@
         <!-- Modal content -->
         <div class="modal-content">
           <span class="close" id="close-modal">&times;</span>
-          <p>Some text in the Modal..</p>
+          <h1>Dodaj nową notatkę</h1>
+          <div class="form-row">
+            <label>Tytuł</label>
+            <input type="text" id="note-title">
+          </div>
+          <div class="form-row">
+            <label>Przypnij</label>
+            <input type="checkbox" id="note-pin">
+          </div>
+          <div class="form-row">
+            <label>Treść</label>
+            <textarea id="note-content" cols="35" rows="5">...</textarea>
+          </div>
+          <div class="form-row">
+          <label>kolor tła</label>
+          <input type="color" value="#ffffff" id="note-color">
+        </div>
+        <div class="form-row">
+            <button id="submit-note">Dodaj Notatke</button>
+        </div>
+          
         </div>
       
       </div>
 </body>
 <script src="./storage.js"></script>
+<script src="./notes.js"></script>
 <script src="./main.js"></script>
 
 </html>
