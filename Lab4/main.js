@@ -63,8 +63,8 @@ function renderNotes(){
 
 function renderNote(note){
     var noteElement = NotesManager.RenderNote(note);
-    var button = noteElement.children[1];
-    button.addEventListener("click", () => {
+    var deleteButton = noteElement.children[1];
+    deleteButton.addEventListener("click", () => {
         RemoveNote(note.id);
     })
 }
