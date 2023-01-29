@@ -81,7 +81,6 @@ function closeModal(){
 }
 
 function onSearchInputChange(){
-    console.log("searchChanged")
     renderNotes();
 }
 

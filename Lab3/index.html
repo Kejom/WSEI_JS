@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>DrumKit</title>
+</head>
+<body>
+    <div class="app">
+    <div class="channels-section">
+        <div class="channels-controls">
+            <button class="btn" id="add-channel">Dodaj Kanał</button>
+            <button class="btn" id="remove-channel">Usuń Wybrane</button>      
+            <button class="btn" id="play-selected">Odtwórz Wybrane</button>   
+            <button class="btn" id="play-all">Odtwórz Wszystkie</button>
+            <label class="beat-label">Ilość Uderzeń na minutę:</label>
+            <input class="beat-input" type="number" min="1" max="600" value="60">         
+        </div>
+        <div class="channels-container">
+        </div>
+    </div>
+    <div class="sounds-container">
+
+    </div>
+</div>
+</body>
+<script src="./elementsFactory.js"></script>
+<script src="./main.js"></script>
+</html>

@@ -1,0 +1,84 @@
+body{
+    background-color: rgba(0,0,0,0.8);
+}
+
+.app{
+    min-height: 98vh;
+    width: 100vw;
+    max-width: 100%;
+
+}
+
+.channels-section{
+    background-color: rgba(11, 5, 59, 0.8);
+    width: 100vw;
+    max-width: 100%;
+}
+
+.channel{
+    min-height: 10vh;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    overflow-x:auto;
+}
+
+.channel-sounds{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.channel-select{
+    min-width: 10vh;
+    min-height: 10vh;
+}
+
+.sounds-container{
+    background-color: rgba(61, 111, 126, 0.8);
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.sound-button{
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    height: 8vh;
+    width: 8vh;
+    margin:5px;
+    padding: 3px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.sound-button h1, p{
+    margin: 0;
+}
+
+.btn{
+    background-color: seagreen;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 10%;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.beat-label{
+    color: #fff;
+    margin: 0 5px 0 5px;
+}

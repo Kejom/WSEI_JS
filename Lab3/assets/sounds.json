@@ -1,0 +1,56 @@
+[
+    {
+        "id": 1,
+        "name": "Boom",
+        "key": "Q",
+        "fileName": "boom.wav"
+    },
+    {
+        "id": 2,
+        "name": "Clap",
+        "key": "W",
+        "fileName": "clap.wav"
+    },
+    {
+        "id": 3,
+        "name": "Hihat",
+        "key": "E",
+        "fileName": "hihat.wav"
+    },
+    {
+        "id": 4,
+        "name": "Kick",
+        "key": "R",
+        "fileName": "kick.wav"
+    },
+    {
+        "id": 5,
+        "name": "Openhat",
+        "key": "T",
+        "fileName": "openhat.wav"
+    },
+    {
+        "id": 6,
+        "name": "Ride",
+        "key": "Y",
+        "fileName": "ride.wav"
+    },
+    {
+        "id": 7,
+        "name": "Snare",
+        "key": "U",
+        "fileName": "snare.wav"
+    },
+    {
+        "id": 8,
+        "name": "Tink",
+        "key": "I",
+        "fileName": "tink.wav"
+    },
+    {
+        "id": 9,
+        "name": "Tom",
+        "key": "O",
+        "fileName": "tom.wav"
+    }
+]
