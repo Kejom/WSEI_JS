@@ -10,6 +10,10 @@
 </head>
 
 <body>
+    <div class="action-bar">
+      <input type="text" class="search-input" id="search" placeholder="Search...">
+      <button class="add-button" id="add">Nowa Notatka</button>
+    </div>
     <div class="container" id="container">
 
         <!-- <div class="card">
@@ -19,7 +23,7 @@
         </div> -->
 
     </div>
-    <button class="add-button" id="add">Nowa Notatka</button>
+    
 
     <div id="myModal" class="modal">
 
@@ -29,11 +33,11 @@
           <h1>Dodaj nową notatkę</h1>
           <div class="form-row">
             <label>Tytuł</label>
-            <input type="text" id="note-title">
+            <input type="text" id="note-title"/>
           </div>
           <div class="form-row">
             <label>Przypnij</label>
-            <input type="checkbox" id="note-pin">
+            <input type="checkbox" id="note-pin"/>
           </div>
           <div class="form-row">
             <label>Treść</label>
@@ -41,12 +45,18 @@
           </div>
           <div class="form-row">
           <label>kolor tła</label>
-          <input type="color" value="#ffffff" id="note-color">
+          <input type="color" value="#ffffff" id="note-color"/>
+        </div>
+        <div class="form-row">
+          <label>Tagi:</label>
+            <div class="tags-container" id="tags-container">
+            </div>
+            <input type="text" id="tag-form"/><button class="add-tag" id="add-tag">Dodaj Tag</button>
         </div>
         <div class="form-row">
             <button id="submit-note">Dodaj Notatke</button>
         </div>
-          
+
         </div>
       
       </div>

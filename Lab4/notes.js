@@ -34,6 +34,16 @@ const NotesManager = function(){
         creationTimeElement.innerHTML = note.created;
         noteDiv.appendChild(creationTimeElement);
 
+        if(note.tags){
+            let tagsContainer = document.createElement("div");
+            tagsContainer.classList.add("tags-container");
+            note.tags.forEach(tag=> {
+                let tagElement = createTagElement(tag);
+                tagsContainer.appendChild(tagElement);
+            });
+            noteDiv.appendChild(tagsContainer);
+        }
+
         let contentElement = document.createElement("p")
         contentElement.innerHTML = note.content;
         noteDiv.appendChild(contentElement);
@@ -41,8 +51,16 @@ const NotesManager = function(){
         return noteDiv
     }
 
+    let createTagElement = function(tagText){
+        let tagElement = document.createElement("span");
+        tagElement.classList.add("tag-span");
+        tagElement.innerHTML = tagText;
+        return tagElement;
+    }
+
     return {
         RenderNote: renderNote,
-        ClearNotes: clearNotes
+        ClearNotes: clearNotes,
+        CreateTagElement: createTagElement
     }
 }();

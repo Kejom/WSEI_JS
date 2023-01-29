@@ -49,10 +49,15 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+
+.search-input{
+  height: 5%;
+  width: 80%;
+  font-size: 25px;
+  padding: 0.5rem;
+}
 .add-button{
-    position: absolute;
-    top: 0px;
-    right: 0px;
+    float: right;
     background-color: seagreen;
     color: #fff;
     border: none;
@@ -112,4 +117,23 @@ body {
 
   .form-row{
     margin-top: 20px;
+  }
+
+  .tag-span{
+    background-color: royalblue;
+    color: #fff;
+    border: none;
+    margin:3px;
+    padding: 3px 5px;
+  }
+
+  .tag-removable{
+    cursor: pointer;
+  }
+
+  .tags-container{
+    margin: 5px;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
