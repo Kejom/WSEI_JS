@@ -6,9 +6,73 @@
 html, body{
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
 canvas{
-    display: block;
+    display: absolute;
     background-color: deepskyblue;
+}
+
+.canvas-container{
+    position: relative;
+}
+
+#start-btn{
+    position: absolute;
+    top:5px;
+    left: 5px;   
+}
+#reset-btn{
+    position: absolute;
+    top:5px;
+    right: 5px;    
+}
+
+.btn{
+    background-color: seagreen;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    width: 10%;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}
+
+.btn:focus {
+    outline: none;
+}
+
+.form-div{
+    background-color: seagreen;
+    color: #fff;
+    border: none;
+    padding: 0.5rem;
+
+    height: 15px;
+}
+
+.form-div:hover{
+    opacity: 0.9;
+}
+
+.form-div label{
+    margin-right: 20px;
+}
+
+#balls-div{
+    position: absolute;
+    top:5px;
+    left: 12%;   
+    width: 15%;
+}
+
+#distance-div{
+    position: absolute;
+    top:5px;
+    right: 12%;   
+    width: 20%;
 }

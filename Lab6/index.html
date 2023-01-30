@@ -9,7 +9,13 @@
 
 </head>
 <body>
+    <div class="canvas-container">
     <canvas id="ballsCanvas"></canvas>
+    <button class="btn" id="start-btn">Start</button>
+    <button class="btn" id="reset-btn">Reset</button>
+    <div class="form-div" id="balls-div"><label>Number of Balls:</label><input type="number" min="1" max="100" id="balls-input"></div>
+    <div class="form-div" id="distance-div"><label>Min distance to draw a line:</label><input type="number" min="10" max="1000" id="distance-input"></div>
+</div>
 </body>
 <script src="./main.js"></script>
 </html>
