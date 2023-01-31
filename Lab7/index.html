@@ -9,10 +9,15 @@
 </head>
 <body>
     <div class="app">
-
+        <div class="toolbar">
+            <div class="autocomplete"><input type="text" class="city-input" id="city-input" placeholder="Wpisz Nazwę Miasta..."></div>
+            <button class="add-button" id="add">Dodaj Kartę</button>
+        </div>
+        <div class="card-container"></div>
     </div>
 </body>
 <script src="./owmClient.js"></script>
 <script src="./citiesRepository.js"></script>
+<script src="./autocomplete.js"></script>
 <script src="./app.js"></script>
 </html>
