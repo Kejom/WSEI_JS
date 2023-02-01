@@ -32,15 +32,15 @@ async function addCity(cityName){
     if(!weather)
         return;
     
-    let city = {name: cityName, data: weather};
+    let city = {id: "c" + Date.now() ,name: cityName, data: weather};
 
     cityData.push(city);
     StorageManager.SaveData(cityData);
     renderCityCard(city);
 }
 
-function removeCity(cityName){
-    cityData = cityData.filter(c => c.name !== cityName)
+function removeCity(id){
+    cityData = cityData.filter(c => c.id !== id)
     StorageManager.SaveData(cityData);
     renderCityCards();
 }
@@ -59,12 +59,12 @@ function clearCardContainer(){
 
 function renderCityCard(cityData){
     let cityCard = ElementsFactory.CreateCityCard(cityData);
-    cityCard.id = cityData.name;
+    cityCard.id = cityData.id;
     cardContainer.appendChild(cityCard);
 
-    let deleteButton = document.querySelector(`#${cityData.name} span`);
+    let deleteButton = document.querySelector(`#${cityData.id} span`);
 
-    deleteButton.addEventListener("click", () => {removeCity(cityData.name)});
+    deleteButton.addEventListener("click", () => {removeCity(cityData.id)});
 }
 
 async function refresh(){
