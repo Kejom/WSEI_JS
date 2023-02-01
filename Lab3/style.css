@@ -14,9 +14,11 @@ body{
     width: 100vw;
     max-width: 100%;
 }
+.channels-container{
+    padding: 10px;
+}
 
 .channel{
-    min-height: 10vh;
     width: 100vw;
     max-width: 100%;
     display: flex;
@@ -30,14 +32,15 @@ body{
 }
 
 .channel-select{
-    min-width: 10vh;
-    min-height: 10vh;
+    min-width: 8vh;
+    min-height: 8vh;
 }
 
 .sounds-container{
     background-color: rgba(61, 111, 126, 0.8);
     width: 100vw;
     max-width: 100%;
+    padding: 10px;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -55,6 +58,10 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
+}
+
+.currently-playing{
+    background-color: seagreen;
 }
 
 .sound-button h1, p{

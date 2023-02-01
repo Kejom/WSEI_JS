@@ -44,6 +44,7 @@ function renderChannelSound(sound, channelId){
     let channelDiv = document.getElementById(channelId);
     let soundsContainer = channelDiv.children[0];
     let soundElement = elementsFactory.CreateSoundElement(sound);
+    soundElement.id = sound.id;
     soundElement.addEventListener("click", ()=>{
         soundElement.remove();
         let channel = channels.filter(c => c.id === channelId)[0];
@@ -63,6 +64,7 @@ function renderChannel(channel){
         let soundsContainer = channelElement.children[0];
         channel.sounds.forEach(sound => {
             let soundElement = elementsFactory.CreateSoundElement(sound);
+            soundElement.id = sound.id;
             soundsContainer.appendChild(soundElement);
         })
     }
@@ -85,8 +87,8 @@ function removeSelectedChannels(){
 }
 
 function getSelectedChannels(){
-    let channels = document.querySelectorAll(".channel-select");
-    let selectedChannels = [...channels].filter(channel => channel.checked);
+    let ids = getSelectedChannelsIds();
+    let selectedChannels = channels.filter(c=> ids.includes(c.id));
     return selectedChannels;
 }
 
@@ -127,20 +129,39 @@ function playAllChannels(){
 
 function playSelectedChannels(){
     selectedChannels = getSelectedChannels();
-    playChannels(channels);
+    playChannels(selectedChannels);
 }
 async function playChannels(channels){
     let beatValue = 60000 / Number(beatInputField.value)
     let beatCount = 0;
+
+
     channels.forEach(c => {
         if(c.sounds.length > beatCount)
             beatCount = c.sounds.length
     })
 
+    let currentlyPlaying = [];
+
     for(let i = 0; i < beatCount; i++){
-        channels.forEach(c=> playSound(c.sounds[i]))
+        unmarkPlayingChannels(currentlyPlaying);
+        currentlyPlaying = [];
+        channels.forEach(c=> {
+            playSound(c.sounds[i])
+            let soundDiv = document.getElementById(c.sounds[i].id);
+            soundDiv.classList.add("currently-playing");
+            currentlyPlaying.push(c.sounds[i].id);
+        })
         await sleep(beatValue);
+        unmarkPlayingChannels(currentlyPlaying);
     }
+}
+
+function unmarkPlayingChannels(channelIds){
+    channelIds.forEach(cId => {
+        let soundDiv = document.getElementById(cId);
+        soundDiv.classList.remove("currently-playing");
+    });
 }
 
 function mapSounds(){
